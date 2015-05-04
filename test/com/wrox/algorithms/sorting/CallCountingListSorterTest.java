@@ -40,7 +40,7 @@ public class CallCountingListSorterTest extends TestCase {
 		}
 	}
 	
-	public void testWorstBubbleSort() {
+	public void test1WorstBubbleSort() {
 		NATURAL_COUNTING_COMPARATOR.resetCount();
 		BubblesortListSorter<Integer> sorter
 		   = new BubblesortListSorter<>(NATURAL_COUNTING_COMPARATOR);
@@ -64,7 +64,31 @@ public class CallCountingListSorterTest extends TestCase {
 		System.out.println("WINS=" + NATURAL_COUNTING_COMPARATOR.getCount());
 	}
 	
-	public void testBestBubbleSort() {
+	public void testWorstShellSort() {
+		NATURAL_COUNTING_COMPARATOR.resetCount();
+		ShellsortListSorter<Integer> sorter
+		   = new ShellsortListSorter<>(NATURAL_COUNTING_COMPARATOR);
+		sorter.sort(reverseArrayList);
+		System.out.println("WSHELL=" + NATURAL_COUNTING_COMPARATOR.getCount());
+	}
+	
+	public void testWorstQuickSort() {
+		NATURAL_COUNTING_COMPARATOR.resetCount();
+		QuicksortListSorter<Integer> sorter
+		   = new QuicksortListSorter<>(NATURAL_COUNTING_COMPARATOR);
+		sorter.sort(reverseArrayList);
+		System.out.println("WQUICK=" + NATURAL_COUNTING_COMPARATOR.getCount());
+	}
+	
+	public void testWorstMergeSort() {
+		NATURAL_COUNTING_COMPARATOR.resetCount();
+		MergesortListSorter<Integer> sorter
+		   = new MergesortListSorter<>(NATURAL_COUNTING_COMPARATOR);
+		sorter.sort(reverseArrayList);
+		System.out.println("WMERGE=" + NATURAL_COUNTING_COMPARATOR.getCount());
+	}
+	
+	public void test1BestBubbleSort() {
 		NATURAL_COUNTING_COMPARATOR.resetCount();
 		BubblesortListSorter<Integer> sorter
 		   = new BubblesortListSorter<>(NATURAL_COUNTING_COMPARATOR);
@@ -86,9 +110,33 @@ public class CallCountingListSorterTest extends TestCase {
 		   = new InsertionsortListSorter<>(NATURAL_COUNTING_COMPARATOR);
 		sorter.sort(sortedArrayList);
 		System.out.println("BINS=" + NATURAL_COUNTING_COMPARATOR.getCount());
-	}	
+	}
 	
-	public void testAverageBubbleSort() {
+	public void testBestShellSort() {
+		NATURAL_COUNTING_COMPARATOR.resetCount();
+		ShellsortListSorter<Integer> sorter
+		   = new ShellsortListSorter<>(NATURAL_COUNTING_COMPARATOR);
+		sorter.sort(sortedArrayList);
+		System.out.println("BSHELL=" + NATURAL_COUNTING_COMPARATOR.getCount());
+	}
+	
+	public void testBestQuickSort() {
+		NATURAL_COUNTING_COMPARATOR.resetCount();
+		QuicksortListSorter<Integer> sorter
+		   = new QuicksortListSorter<>(NATURAL_COUNTING_COMPARATOR);
+		sorter.sort(sortedArrayList);
+		System.out.println("BQUICK=" + NATURAL_COUNTING_COMPARATOR.getCount());
+	}
+	
+	public void testBestMergeSort() {
+		NATURAL_COUNTING_COMPARATOR.resetCount();
+		MergesortListSorter<Integer> sorter
+		   = new MergesortListSorter<>(NATURAL_COUNTING_COMPARATOR);
+		sorter.sort(sortedArrayList);
+		System.out.println("BMERGE=" + NATURAL_COUNTING_COMPARATOR.getCount());
+	}
+	
+	public void test1AverageBubbleSort() {
 		NATURAL_COUNTING_COMPARATOR.resetCount();
 		BubblesortListSorter<Integer> sorter
 		   = new BubblesortListSorter<>(NATURAL_COUNTING_COMPARATOR);
@@ -110,5 +158,29 @@ public class CallCountingListSorterTest extends TestCase {
 		   = new InsertionsortListSorter<>(NATURAL_COUNTING_COMPARATOR);
 		sorter.sort(randomArrayList);
 		System.out.println("AINS=" + NATURAL_COUNTING_COMPARATOR.getCount());
+	}
+	
+	public void testAverageShellSort() {
+		NATURAL_COUNTING_COMPARATOR.resetCount();
+		ShellsortListSorter<Integer> sorter
+		   = new ShellsortListSorter<>(NATURAL_COUNTING_COMPARATOR);
+		sorter.sort(randomArrayList);
+		System.out.println("ASHELL=" + NATURAL_COUNTING_COMPARATOR.getCount());
+	}
+	
+	public void testAverageQuickSort() {
+		NATURAL_COUNTING_COMPARATOR.resetCount();
+		QuicksortListSorter<Integer> sorter
+		   = new QuicksortListSorter<>(NATURAL_COUNTING_COMPARATOR);
+		sorter.sort(randomArrayList);
+		System.out.println("AQUICK=" + NATURAL_COUNTING_COMPARATOR.getCount());
+	}
+	
+	public void testAverageMergeSort() {
+		NATURAL_COUNTING_COMPARATOR.resetCount();
+		MergesortListSorter<Integer> sorter
+		   = new MergesortListSorter<>(NATURAL_COUNTING_COMPARATOR);
+		sorter.sort(randomArrayList);
+		System.out.println("AMERGE=" + NATURAL_COUNTING_COMPARATOR.getCount());
 	}
 }
