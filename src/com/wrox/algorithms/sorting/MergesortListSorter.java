@@ -45,15 +45,19 @@ public class MergesortListSorter<T extends Comparable<T>> implements ListSorter<
 		
 		while (!(leftIter.isDone() && rightIter.isDone())) {
 			if (leftIter.isDone()) {
+				// right from here on out
 				result.add(rightIter.current());
 				rightIter.next();
 			} else if (rightIter.isDone()) {
+				// left from here on out
 				result.add(leftIter.current());
 				leftIter.next();
 			} else if (comparator.compare(leftIter.current(), rightIter.current()) < 0) {
+				// left before right
 				result.add(leftIter.current());
 				leftIter.next();
 			} else {
+				// right before left
 				result.add(rightIter.current());
 				rightIter.next();
 			}
